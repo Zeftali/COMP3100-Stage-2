@@ -103,15 +103,18 @@ public class Client {
 		String serverInfo = ""; 
 
 		for (Server s: servers){
-			if (s.getDisk() >= j.get(0).getDiskReq() && s.getCores() >= j.get(0).getCoreReq() && s.getMemory() >= j.get(0).getMemeoryReq()){
-			 	serverInfo = s.getType() + " " + s.getID();
-				return "SCHD " + j.get(0).getJobID() + " " + serverInfo;
-			} else { //If no servers are optimal in GETS CAPABLE list then defer that job to first server
-				serverInfo = servers.get(0).getType() + " " + servers.get(0).getID(); 
+			for(Job job: j){
+				if (s.getDisk() >= job.getDiskReq() && s.getCores() >= job.getCoreReq() && s.getMemory() >= job.getMemoryReq() && s.getWaitJob() <= job.getRunTime()){
+					serverInfo = s.getType() + " " + s.getID();
+				   return "SCHD " + job.getJobID() + " " + serverInfo;
+			   } else { //If no servers are optimal in GETS CAPABLE list then defer that job to first server
+				   serverInfo = servers.get(0).getType() + " " + servers.get(0).getID(); 
+			   }
 			}
 		}
 		return "SCHD " + j.get(0).getJobID() + " " + serverInfo;
 	}
+
 
 	//Grabs server input and creates an array list of servers capable of new scheduling algorithm 
 	public ArrayList<Server> createServer(String server){
