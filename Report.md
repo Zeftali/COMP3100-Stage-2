@@ -23,6 +23,15 @@ The code structure is similar to that of turnaround time with ENDTIME - STARTTIM
 7. Returns the first job's ID along with the serverInfo
 
 ## Implementation Details (1/2 Page)
+The newScheduler algorithm required modifications to the Client class and Server class as well as the introduction of a new Job class, which determines the job's startTime and runTime. 
+The Job class contains six fields of type integer: 
+* int startTime - Job's startTime
+* int jobID - ID of job
+* estRunTime - Estimated time for job to be completed 
+* coreReq - No. of CPU cores required 
+* memoryReq - No. of memory required
+* diskReq - No. of disk space required 
+These fields are called privately from its class e.g. _this.getCoreReq;_
 
 ## Evaluation (2 Pages)
 
