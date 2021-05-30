@@ -16,10 +16,10 @@ The code structure is similar to that of turnaround time with ENDTIME - STARTTIM
 ### Psuedocode 
 1. Empty string is made to hold server information 
 2. For loop with server 
-3.    Nested for loop with job 
-4.        Finds server for job based on server's disk, cores, memory and job's startTime and                updates serverInfo with the server's type and ID. Finally schedules job with the job's ID         and serverInfo
-5.        Else
-6.            Jobs that are not able to be sent to a getsCapable list are deferred to the first                   server from that list
+3. Nested for loop with job 
+4. Finds server for job based on server's disk, cores, memory and job's startTime and updates serverInfo with the server's type and ID. Finally schedules job with the job's ID and serverInfo
+5. Else
+6. Jobs that are not able to be sent to a getsCapable list are deferred to the first server from that list
 7. Returns the first job's ID along with the serverInfo
 
 ## Implementation Details (1/2 Page)
