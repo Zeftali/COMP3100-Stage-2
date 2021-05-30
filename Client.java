@@ -97,8 +97,8 @@ public class Client {
 		}
 		System.exit(1);
 	}
-	
-	//New scheduling algorithm with respect to faster turnaround time 
+
+	//New scheduling algorithm with respect to better rental cost and turnaround time 
 	public String newScheduler(ArrayList<Server> servers, ArrayList<Job> j){
 		String serverInfo = ""; 
 
@@ -115,7 +115,6 @@ public class Client {
 		return "SCHD " + j.get(0).getJobID() + " " + serverInfo;
 	}
 
-
 	//Grabs server input and creates an array list of servers capable of new scheduling algorithm 
 	public ArrayList<Server> createServer(String server){
 		//Removal of trailing space as this will cause an error if it is not removed 
@@ -130,7 +129,7 @@ public class Client {
 		for (String line : lines) {
 			String[] splitString = line.split("\\s+");
 
-			//Creates new server based on serverType, serverID, state, currentStartTime, coreCount, memory, disk, waitingJobs and runningJobs repsectively 
+			//Creates new server based on serverType, serverID, coreCount, memory, and disk respectively 
 			Server s = new Server(splitString[0], Integer.parseInt(splitString[1]), Integer.parseInt(splitString[4]), Integer.parseInt(splitString[5]), Integer.parseInt(splitString[6]));
 			newServers.add(s);
         }
@@ -140,10 +139,9 @@ public class Client {
 
 
 
-	//Grabs available servers 
+	//Grabs available servers based on core req, memory req and disk req
 	public String getsCapable(Job j){
-		//Available servers based on core req, memory req and disk req respectively 
-		return("GETS Capable " + j.getCoreReq() + " " + j.getMemeoryReq() + " " + j.getDiskReq());
+		return("GETS Capable " + j.getCoreReq() + " " + j.getMemoryReq() + " " + j.getDiskReq());
 	}
 
 	
@@ -153,7 +151,7 @@ public class Client {
 		job = job.trim();
 		String[] splitString = job.split("\\s+");
 
-		//Creates new job based on submit time, jobID, runtime, core req, memory req and disk req respectively 
+		//Creates new job based on start time, jobID, runtime, core req, memory req and disk req respectively 
 		Job j = new Job(Integer.parseInt(splitString[1]), Integer.parseInt(splitString[2]), Integer.parseInt(splitString[3]),  Integer.parseInt(splitString[4]) ,Integer.parseInt(splitString[5]), Integer.parseInt(splitString[6]));
 
 		//Returns job to fill arraylist
