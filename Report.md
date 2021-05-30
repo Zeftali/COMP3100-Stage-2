@@ -23,16 +23,20 @@ The code structure is similar to that of turnaround time with ENDTIME - STARTTIM
 7. Returns the first job's ID along with the serverInfo
 
 ## Implementation Details (1/2 Page)
-The newScheduler algorithm required modifications to the Client class and Server class as well as the introduction of a new Job class, which determines the job's startTime and runTime. 
+The newScheduler algorithm required modifications to the Client class and Server class as well as the introduction of a new Job class, which determines the job's startTime and runTime. The main data structure used was an ArrayList, which allowed the storing of job information and began scheduling on the basis of the criteria given. The newScheduler algorithm utilises two parameters that are of type ArrayList; ArrayList<Server> and ArrayList<Job>. Arrayu
 The Job class contains six fields of type integer: 
-* int startTime - Job's startTime
-* int jobID - ID of job
+* startTime - Job's startTime
+* jobID - ID of job
 * runTime - Time for job to be completed
 * coreReq - No. of CPU cores required 
 * memoryReq - No. of memory required
 * diskReq - No. of disk space required 
-These fields are called privately from its class e.g. _job.getCoreReq();_.
-
+The Server class introduces a new constructor which is used to create a new server object to be used as a temporary arraylist for all capable servers. This new constructor contains: 
+* String type 
+  int id 
+  int coreCount
+  int memory 
+  int disk
 ## Evaluation (2 Pages)
 
 ## Conclusion (1/4 Page)
