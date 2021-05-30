@@ -2,16 +2,16 @@ public class Job {
     
     private int startTime;
     private int  jobID;
-    private int  estRunTime;
+    private int  runTime;
     private int  coreReq;
     private int  memoryReq;
     private int  diskReq;
 
 
-    public Job(int startTime, int jID, int runT, int coreRq, int memReq, int dkReq){
+    public Job(int startTime, int jID, int runTime, int coreRq, int memReq, int dkReq){
         this.startTime = startTime;
         this.jobID = jID;
-        this.estRunTime = runT;
+        this.runTime = runTime;
         this.coreReq = coreRq;
         this.memoryReq = memReq;
         this.diskReq = dkReq;
@@ -27,7 +27,7 @@ public class Job {
     }
     //ruTime : returns runTime of server
     public int getRunTime(){
-        return this.estRunTime;
+        return this.runTime;
     }
     //coreReq : returns the cpu core required for job to be added to server 
     public int getCoreReq(){
