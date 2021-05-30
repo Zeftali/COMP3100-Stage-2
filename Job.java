@@ -8,16 +8,16 @@ public class Job {
     private int  diskReq;
 
 
-    public Job(int startTime, int jID, int runTime, int coreRq, int memReq, int dkReq){
+    public Job(int startTime, int jobID, int runTime, int coreRq, int memReq, int diskReq){
         this.startTime = startTime;
-        this.jobID = jID;
+        this.jobID = jobID;
         this.runTime = runTime;
         this.coreReq = coreRq;
         this.memoryReq = memReq;
-        this.diskReq = dkReq;
+        this.diskReq = diskReq;
     }
 
-    //submitTime : returns submit time 
+    //submitTime : returns start time 
     public int getStartTime(){
         return this.startTime;
     }
