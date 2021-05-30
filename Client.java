@@ -104,7 +104,7 @@ public class Client {
 
 		for (Server s: servers){
 			for(Job job: j){
-				if (s.getDisk() >= job.getDiskReq() && s.getCores() >= job.getCoreReq() && s.getMemory() >= job.getMemoryReq() && job.getSubmitTime() >= job.getRunTime()){
+				if (s.getDisk() >= job.getDiskReq() && s.getCores() >= job.getCoreReq() && s.getMemory() >= job.getMemoryReq() && job.getStartTime() >= job.getRunTime()){
 					serverInfo = s.getType() + " " + s.getID();
 				   return "SCHD " + job.getJobID() + " " + serverInfo;
 			   } else { //If no servers are optimal in GETS CAPABLE list then defer that job to first server
