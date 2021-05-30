@@ -131,8 +131,7 @@ public class Client {
 			String[] splitString = line.split("\\s+");
 
 			//Creates new server based on serverType, serverID, state, currentStartTime, coreCount, memory, disk, waitingJobs and runningJobs repsectively 
-			Server s = new Server(splitString[0], Integer.parseInt(splitString[1]), splitString[2], Integer.parseInt(splitString[3]), Integer.parseInt(splitString[4]), 
-			Integer.parseInt(splitString[5]), Integer.parseInt(splitString[6]), Integer.parseInt(splitString[7]), Integer.parseInt(splitString[8]));
+			Server s = new Server(splitString[0], Integer.parseInt(splitString[1]), Integer.parseInt(splitString[4]), Integer.parseInt(splitString[5]), Integer.parseInt(splitString[6]));
 			newServers.add(s);
         }
 
