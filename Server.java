@@ -8,6 +8,7 @@ public class Server {
 	private int disk;
 	private int id;
 
+
 	public Server(String type, int limit, int bootTime, float hourlyRate, int coreCount, int memory, int disk) {
 		this.type = type;
 		this.limit = limit;
@@ -21,10 +22,9 @@ public class Server {
 	public Server(String type, int id, int coreCount, int memory, int disk) {
 		this.type = type;
 		this.id = id;
-		this.status = state;
+		this.coreCount = coreCount;
 		this.memory = memory;
 		this.disk = disk;
-
 	}
 
 	//id : ID of server
@@ -39,7 +39,7 @@ public class Server {
 
 	//limit : limit of servers of unique type
 	public int getLimit() {
-		return this.limit; // the number of servers of a particular type
+		return this.limit; 
 	}
 
 	//bootupTime : the amount of time taken to boot a server of particular type
@@ -66,7 +66,6 @@ public class Server {
 	public int getDisk() {
 		return this.disk;
 	}
-
 
 	public void printData() {
 		System.out.println(this.type + " " + this.limit + " " + this.bootTime + " " + this.hourlyRate + " " + this.coreCount + " " + this.memory + " " + this.disk);
