@@ -17,13 +17,13 @@ The code structure is similar to that of turnaround time with ENDTIME - STARTTIM
 1. Empty string is made to hold server information 
 2. For loop with server 
 3. Nested for loop with job 
-4. Finds server for job based on server's disk, cores, memory and job's startTime and updates serverInfo with the server's type and ID. Finally schedules job with the job's ID and serverInfo
+4. Finds server for job based on server disk space, core count, amount of memory and job's startTime and updates serverInfo with the server's type and ID. Finally schedules job with the job's ID and serverInfo
 5. Else
 6. Jobs that are not able to be sent to a getsCapable list are deferred to the first server from that list
 7. Returns the first job's ID along with the serverInfo
 
 ## Implementation Details (1/2 Page)
-The newScheduler algorithm required modifications to the Client class and Server class as well as the introduction of a new Job class, which determines the job's startTime and runTime. The main data structure used was an ArrayList, which allowed the storing of job information and began scheduling on the basis of the criteria given. The newScheduler algorithm utilises two parameters that are of type ArrayList; ArrayList<Server> and ArrayList<Job>. Arrayu
+The newScheduler algorithm required modifications to the Client class and Server class as well as the introduction of a new Job class, which determines the job's startTime and runTime. The main data structure used was an ArrayList, which allowed the storing of job information and began scheduling on the basis of the criteria given. The newScheduler algorithm utilises two parameters that are of type ArrayList; ArrayList<Server> and ArrayList<Job>. ArrayList<Server> and ArrayList<Job> are used to cycle through each server and assign each job to a capable server based on the criteria written in the algorithm (server disk space, core count, amount of memory and the job's startTime). 
 The Job class contains six fields of type integer: 
 * startTime - Job's startTime
 * jobID - ID of job
@@ -31,12 +31,12 @@ The Job class contains six fields of type integer:
 * coreReq - No. of CPU cores required 
 * memoryReq - No. of memory required
 * diskReq - No. of disk space required
-** The Server class introduces a new constructor which is used to create a new server object to be used as a temporary arraylist for all capable servers. This new constructor contains: 
-* String type 
-* int id 
-* int coreCount
-* int memory 
-* int disk
+The Server class introduces a new constructor which is used to create a new server object to be used as a temporary arraylist for all capable servers. This new constructor contains: 
+* String type - Category of job 
+* int id - ID of sErver 
+* int coreCount - No. CPU cores in server
+* int memory - No. of memory in server
+* int disk - No. of disk space in server
   
 ## Evaluation (2 Pages)
 
