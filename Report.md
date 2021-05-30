@@ -31,6 +31,13 @@ The Job class contains six fields of type integer:
 * coreReq - No. of CPU cores required 
 * memoryReq - No. of memory required
 * diskReq - No. of disk space required
+## The Server class introduces a new constructor which is used to create a new server object to be used as a temporary arraylist for all capable servers. This new constructor contains: 
+* String type 
+* int id 
+  * int coreCount
+  * int memory 
+  * int disk
+  
 ## Evaluation (2 Pages)
 
 ## Conclusion (1/4 Page)
