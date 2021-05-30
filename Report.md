@@ -27,11 +27,11 @@ The newScheduler algorithm required modifications to the Client class and Server
 The Job class contains six fields of type integer: 
 * int startTime - Job's startTime
 * int jobID - ID of job
-* estRunTime - Estimated time for job to be completed 
+* runTime - Time for job to be completed
 * coreReq - No. of CPU cores required 
 * memoryReq - No. of memory required
 * diskReq - No. of disk space required 
-These fields are called privately from its class e.g. _this.getCoreReq;_
+These fields are called privately from its class e.g. _job.getCoreReq();_.
 
 ## Evaluation (2 Pages)
 
