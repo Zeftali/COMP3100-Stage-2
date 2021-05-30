@@ -7,10 +7,6 @@ public class Server {
 	private int memory;
 	private int disk;
 	private int id;
-	private String status;
-	private int startTime;
-	private int waitingJobs;
-	private int runningJobs;
 
 	public Server(String type, int limit, int bootTime, float hourlyRate, int coreCount, int memory, int disk) {
 		this.type = type;
@@ -22,16 +18,12 @@ public class Server {
 		this.disk = disk;
 	}
 
-	public Server(String type, int id, String state, int startTime, int coreCount, int memory, int disk, int waitingJobs, int runningJobs) {
+	public Server(String type, int id, int coreCount, int memory, int disk) {
 		this.type = type;
 		this.id = id;
 		this.status = state;
-		this.startTime = startTime;
-		this.coreCount = coreCount;
 		this.memory = memory;
 		this.disk = disk;
-		this.waitingJobs = waitingJobs;
-		this.runningJobs = runningJobs;
 
 	}
 
@@ -75,25 +67,6 @@ public class Server {
 		return this.disk;
 	}
 
-	// returns an int for wait time for server
-	public int getWaitJob() {
-		return this.waitingJobs;
-	}
-
-	//state : returns status of server 
-	public String getState() {
-		return this.status;
-	}
-
-	//startTime : startTime of server 
-	public int getStartTime() {
-		return this.startTime;
-	}
-
-	//runTime : runTime of server 
-	public int getRunTime() {
-		return this.runningJobs;
-	}
 
 	public void printData() {
 		System.out.println(this.type + " " + this.limit + " " + this.bootTime + " " + this.hourlyRate + " " + this.coreCount + " " + this.memory + " " + this.disk);
