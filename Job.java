@@ -1,6 +1,6 @@
 public class Job {
     
-    private int submitTime;
+    private int startTime;
     private int  jobID;
     private int  estRunTime;
     private int  coreReq;
@@ -8,8 +8,8 @@ public class Job {
     private int  diskReq;
 
 
-    public Job(int subTime, int jID, int runT, int coreRq, int memReq, int dkReq){
-        this.submitTime = subTime;
+    public Job(int startTime, int jID, int runT, int coreRq, int memReq, int dkReq){
+        this.startTime = startTime;
         this.jobID = jID;
         this.estRunTime = runT;
         this.coreReq = coreRq;
@@ -18,8 +18,8 @@ public class Job {
     }
 
     //submitTime : returns submit time 
-    public int getSubmitTime(){
-        return this.submitTime;
+    public int getStartTime(){
+        return this.startTime;
     }
     //jobID : returns the jobID
     public int getJobID(){
